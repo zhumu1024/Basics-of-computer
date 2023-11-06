@@ -23,7 +23,7 @@
  * 自增后开始顺序执行下一条指令，不断循环执行直到程序结束。
 
 ### 计算机硬件组成
-这部分记录关于计算机的硬件组成的介绍。[详细部分请参照](https://blog.csdn.net/weixin_43490708/article/details/126797448?ops_request_misc=&request_id=&biz_id=102&utm_term=%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-126797448.nonecase&spm=1018.2226.3001.4187)。
+这部分记录关于计算机的硬件组成的简要介绍。[详细部分请参照](https://blog.csdn.net/weixin_43490708/article/details/126797448?ops_request_misc=&request_id=&biz_id=102&utm_term=%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-126797448.nonecase&spm=1018.2226.3001.4187)。
 
 计算机分为主机和输入输出设备，主机包括：机箱，电源，主板，声卡，网卡，显卡，内存，CPU，硬盘，光驱，调制解调器。输入输出设备包括：鼠标，键盘，音响，打印机，扫描仪，显示器等，[参照](https://blog.csdn.net/weixin_73993191/article/details/127767737?ops_request_misc=&request_id=&biz_id=102&utm_term=%E8%AE%A1%E7%AE%97%E6%9C%BA%20%20%E7%A1%AC%E4%BB%B6%E9%83%A8%E5%88%86&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-127767737.142^v96^pc_search_result_base5&spm=1018.2226.3001.4187)。
 
@@ -47,6 +47,23 @@ Central Processing Unit （CPU）中央处理器，作为计算机系统的`运�
   * C语言：编译器帮我们管理直接内存地址，通过编译器提供的变量名等来访问内存的，操作系统下如果需要大块内存，可以通过API（malloc free）来访问系统内存。裸机程序中需要大块的内存需要自己来定义数组等来解决。
   * C++语言：对内存的使用进一步封装。我们可以用new来创建对象（其实就是为对象分配内存），然后使用完了用delete来删除对象（其实就是释放内存）。
   
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+显卡/GPU
+此处简要记录GPU的相关知识，具体请[参照](https://blog.csdn.net/chongbin007/article/details/123684085?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169924137616800184158908%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=169924137616800184158908&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-123684085-null-null.142^v96^pc_search_result_base5&utm_term=cpu%E5%92%8Cgpu&spm=1018.2226.3001.4187)
+
+显存部分请[参照](https://blog.csdn.net/tianzhonghaoqing/article/details/121411246?ops_request_misc=&request_id=&biz_id=102&utm_term=%E8%AE%A1%E7%AE%97%E6%9C%BA%20%20%E6%98%BE%E5%8D%A1&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-121411246.142^v96^pc_search_result_base5&spm=1018.2226.3001.4187)
+
+GPU（Graphic Processing Unit），图形处理器，GPU是专门为处理图形任务而产生的芯片。因此GPU相当于电脑的CPU，不过它的主要任务是`处理显示信息`，在处理信息的过程中，它会产生大量的`临时数据`(未处理的、正在处理的、已经处理完成的)，这就需要一个专 门 的地方来存放这些临时数据，即`显存`了。在GPU出现之前，CPU一直负责着计算机中主要的运算工作，包括多媒体的处理工作。`CPU的架构是有利于X86指令集的串行架构，设计思路上适合尽可能快的完成一个任务`。但CPU在多媒体处理中存在缺陷：多媒体计算通常要求较高的运算密度、多并发线程和频繁地存储器访问。GPU的任务是在屏幕上合成显示数百万个像素的图像——也就是同时拥有几百万个任务需要`并行处理`，因此`GPU被设计成可并行处理很多任务，而不是像CPU那样完成单任务。` 
+
+总的来说，CPU和GPU的共同点是属于超大规模集成电路元件以及可以完成浮点运算功能。区别在于：
+ * CPU延时低，但是计算能力有限，串行架构适合尽可能快的完成一个任务
+ * GPU核多，擅长计算运行，延时较高，不擅长复杂逻辑处理，更适合并行执行多个任务，设计更简单。
+
+从设计理念来看，CPU要做得很通用。CPU需要同时很好的支持并行和串行操作，需要很强的通用性来处理各种不同的数据类型，同时又要支持复杂通用的逻辑判断，这样会引入大量的分支跳转和中断的处理。这减少了计算单元的比重。而GPUU面对的则是类型高度统一的、相互无依赖的大规模数据和不需要被打断的纯净的计算环境。
+
+
+
+
 
 
 ## python文件执行过程
