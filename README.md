@@ -5,7 +5,13 @@
 ## 计算机架构部分
 
 ### 冯诺依曼体系介绍
-这部分对冯诺依曼体系进行了简单的记录和学习，[详细部分]( https://blog.csdn.net/weixin_43490708/article/details/126797448?ops_request_misc=&request_id=&biz_id=102&utm_term=%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-126797448.nonecase&spm=1018.2226.3001.4187)。
+这部分对冯诺依曼体系进行了简单的记录和学习，[详细部分请参照]( https://blog.csdn.net/weixin_43490708/article/details/126797448?ops_request_misc=&request_id=&biz_id=102&utm_term=%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-126797448.nonecase&spm=1018.2226.3001.4187)。
+
+现代计算机之父冯诺伊曼最先提出程序存储的思想，并成功将其运用在计算机的设计之中，该思想约定了用二进制进行计算和存储，还定义计算机基本结构为 5 个部分，
+分别是中央处理器（CPU）、内存、输入设备、输出设备、总线。（运算器、存储器、控制器、输入设备和输出设备）。
+早期的冯·诺依曼机以运算器为中心，输入/输出设备通过运算器与存储器传送数据。随着微电子技术的进步，同时计算机需要处理、加工的信息量也与日俱增，大量I/O设备的速度和CPU的速度筹距悬殊，因此以运算器为中心的结构不能够满足计算机发展的要求。现代计算机已发展为以存储器为中心，使I/O操作尽可能地绕过CPU，直接在I/O设备和存储器之间完成，以提高系统的整体运行效率。
+
+
 
 
 ## python文件执行过程
